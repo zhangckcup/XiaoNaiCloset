@@ -1,0 +1,18 @@
+<!--components/list/index.wxml-->
+<view class="list-warp">
+  <view
+    class="list-item"
+    wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}}"
+    wx:key="item"
+  >
+    <image
+      class="list-item-pic"
+      src="https://ts1.cn.mm.bing.net/th/id/R-C.5245459c4835900f30183bebecb3cb55?rik=koS%2bxytGvrBRHw&riu=http%3a%2f%2fpic.zsucai.com%2ffiles%2f2013%2f0723%2fsdidjj4.jpg&ehk=WJLRakwfHBZS2aO2sK%2bCdh4ijkXwyYijy5Z2BFUdnz4%3d&risl=&pid=ImgRaw&r=0" 
+      mode="aspectFill"
+    />
+    <view class="list-item-label">
+      这里最长有二十个字。这里最长有二十个字。
+    </view>
+  </view>
+  <view style="width: 100%;height: 150rpx;"></view>
+</view>

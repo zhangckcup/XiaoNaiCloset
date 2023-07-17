@@ -1,0 +1,42 @@
+.weui-tabs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.weui-tabs-bar__wrp {
+  width: 100%;
+  background: #fff
+}
+
+.weui-tabs-bar__content {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 12rpx;
+}
+
+.weui-tabs-bar__item {
+  margin: 0 6rpx;
+}
+
+.weui-tabs-bar__title {
+  padding: 6rpx 12rpx;
+  display: inline-block;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+.weui-tabs-swiper {
+  width: 100%;
+  flex: 1 0 auto;
+  overflow: auto;
+}
+
+.tab-bar-title__selected {
+  font-weight: 600;
+}

@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <mp-taps
+    class="tab-warp"
+    tabs="{{tabs}}"
+    activeTab="{{activeTab}}" 
+    bindtabclick="onTabClick"
+    bindchange="onChange"
+  >
+    <block wx:for="{{tabs}}" wx:key="title">
+      <cloth-list class="tab-content" slot="tab-content-{{index}}"></cloth-list>
+    </block>
+  </mp-taps>
+  <view class="add_button">+</view>
+</view>

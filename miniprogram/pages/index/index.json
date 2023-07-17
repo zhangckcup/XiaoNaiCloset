@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-taps": "../../components/tabs",
+    "cloth-list": "../../components/list"
+  }
+}
