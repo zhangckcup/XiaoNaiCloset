@@ -6,9 +6,9 @@
     show="{{error}}" 
     delay="{{3000}}"
   />
-  <view class="add-cloth-title">{{isEdit ? '修改衣服信息' : '记录新衣服'}}</view>
+  <view class="add-cloth-title">{{isEdit ? '修 改 信 息' : '新 的 纪 录'}}</view>
   <form>
-    <view class="weui-cells__title">衣服展示图</view>
+    <view class="weui-cells__title">展示图</view>
     <view class="weui-cell">
       <mp-uploader
         ext-class="add-cloth-uploader"
@@ -22,17 +22,17 @@
         files="{{imgList}}"
       />
     </view>
-    <view class="weui-cells__title">衣服名称</view>
+    <view class="weui-cells__title">名称</view>
     <view class="weui-cell">
       <input
         class="weui-input"
         maxlength="14"
         value="{{clothName}}"
         bindinput="bindClothName"
-        placeholder="请输入衣服名称"
+        placeholder="请输入名称"
       />
     </view>
-    <view class="weui-cells__title">衣服类型</view>
+    <view class="weui-cells__title">类型</view>
     <view class="weui-cell">
       <radio-group 
         class="cloth-type-radio" 
@@ -42,7 +42,7 @@
           <view>
             <radio value="{{item}}" checked="{{type === item}}"/>
           </view>
-          <view style="font-size: 28rpx;">{{item}}</view>
+          <view style="font-size: 28rpx;line-height: 54rpx;">{{item}}</view>
         </label>
       </radio-group>
     </view>

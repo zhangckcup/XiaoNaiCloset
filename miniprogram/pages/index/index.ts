@@ -6,7 +6,8 @@ import { types } from "../../utils/constants";
 Page({
   data: {
     tabs: ['全部', ...types],
-    userInfo: {}
+    userInfo: {},
+    activeTabIdx: 0
   },
   // 生命周期
   onLoad() {
@@ -19,13 +20,18 @@ Page({
   },
   onAddTap() {
     wx.navigateTo({
-      url: "/pages/addPage/index",
+      url: `/pages/addPage/index?type=${this.data.activeTabIdx}`,
       success(res) {
         console.log("pages/addPage/index ok", res);
       },
       fail(err) {
         console.log("pages/addPage/index error",err);
       }
+    });
+  },
+  onChange({detail}) {
+    this.setData({
+      activeTabIdx: detail.index
     });
   }
 })

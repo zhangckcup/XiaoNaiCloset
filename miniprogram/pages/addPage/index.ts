@@ -37,6 +37,11 @@ Page({
           editIndex: +query.idx || 0
         })
       });
+    } else if (query.type) {
+      const type = query.type;
+      this.setData({
+        type: types[+type - 1] || types[0]
+      });
     }
   },
 
