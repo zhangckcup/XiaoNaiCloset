@@ -1,10 +1,11 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>()
+import { types } from "../../utils/constants";
 
 Page({
   data: {
-    tabs: ['全部', '洛丽塔', 'C服', 'JK', '汉服', '其他'],
+    tabs: ['全部', ...types],
     userInfo: {}
   },
   // 生命周期

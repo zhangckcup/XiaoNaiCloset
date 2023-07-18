@@ -6,14 +6,14 @@
     show="{{error}}" 
     delay="{{3000}}"
   />
-  <view class="add-cloth-title">记录新衣服</view>
+  <view class="add-cloth-title">{{isEdit ? '修改衣服信息' : '记录新衣服'}}</view>
   <form>
     <view class="weui-cells__title">衣服展示图</view>
     <view class="weui-cell">
       <mp-uploader
         ext-class="add-cloth-uploader"
         title=""
-        tips="图片长宽比为16:9哦"
+        tips="图片长宽比为 4:3 哦"
         delete="{{true}}"
         upload="imgUpload"
         bindselect="imgSelect"
@@ -26,7 +26,8 @@
     <view class="weui-cell">
       <input
         class="weui-input"
-        maxlength="18"
+        maxlength="14"
+        value="{{clothName}}"
         bindinput="bindClothName"
         placeholder="请输入衣服名称"
       />
@@ -51,6 +52,6 @@
       formType="submit"
       bindtap="bindSubmit"
       disabled="{{disabled}}"
-    >记 录</button>
+    >{{isEdit ? '修 改' : '记 录'}}</button>
   </form>
 </view>

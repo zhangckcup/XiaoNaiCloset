@@ -1,11 +1,22 @@
 <!--components/list/index.wxml-->
 <view class="list-warp">
+  <mp-dialog
+    mask="{{true}}"
+    show="{{dialogShow}}"
+    buttons="{{buttons}}"
+    title="{{dialogTitle}}"
+    bindbuttontap="onDelete"
+  />
   <view
     class="list-item"
     wx:for="{{list}}"
     wx:key="url"
   >
     <image
+      bindlongpress="onItemLongPress"
+      bindtap="onItemTap"
+      data-index="{{index}}"
+      data-name="{{item.name}}"
       class="list-item-pic"
       src="{{item.img.url}}" 
       mode="aspectFill"

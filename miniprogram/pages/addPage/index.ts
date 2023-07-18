@@ -1,3 +1,5 @@
+import { types } from "../../utils/constants";
+
 // pages/addPage/index.ts
 interface IImgDetail {
   tempFilePaths: any, 
@@ -17,7 +19,25 @@ Page({
     error: "",
     disabled: false,
     type: '洛丽塔',
-    clothType: ['洛丽塔', 'C服', 'JK', '汉服', '其他']
+    clothType: types,
+    isEdit: false,
+    editIndex: 0
+  },
+
+  onLoad(query) {
+    if (query.idx) {
+      wx.getStorage({key: "clothList"}).then(res => {
+        const data = res.data[query.idx] || {};
+        
+        this.setData({
+          isEdit: true,
+          clothName: data.name,
+          type: data.type,
+          imgList: [data.img],
+          editIndex: +query.idx || 0
+        })
+      });
+    }
   },
 
   /**
@@ -60,11 +80,20 @@ Page({
       }
       
       const data = res.data || [];
-      data.push({
-        type: this.data.type,
-        img: this.data.imgList[0],
-        name: this.data.clothName
-      });
+      if (this.data.isEdit) {
+        data.splice(this.data.editIndex, 1, {
+          type: this.data.type,
+          img: this.data.imgList[0],
+          name: this.data.clothName
+        });
+      } else {
+        data.push({
+          type: this.data.type,
+          img: this.data.imgList[0],
+          name: this.data.clothName
+        });
+      }
+      
       
       wx.setStorage({
         key:"clothList",

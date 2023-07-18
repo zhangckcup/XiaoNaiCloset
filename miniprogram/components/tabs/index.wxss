@@ -15,16 +15,19 @@
   box-sizing: border-box;
   white-space: nowrap;
   display: flex;
-  justify-content: space-around;
+  justify-content: first baseline;
   padding: 0 12rpx;
 }
 
 .weui-tabs-bar__item {
-  margin: 0 6rpx;
+  margin: 0 12rpx;
 }
 
 .weui-tabs-bar__title {
   padding: 6rpx 12rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 28rpx;
   display: inline-block;
   border-bottom-width: 2px;
   border-bottom-style: solid;
