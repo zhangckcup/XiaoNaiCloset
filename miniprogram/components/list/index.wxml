@@ -7,6 +7,11 @@
     title="{{dialogTitle}}"
     bindbuttontap="onDelete"
   />
+  <view wx:if="{{!list.length}}" class="list-upload-tips">
+    👇点击底部 “+” 添加服装哦。
+    <view></view>
+    上传后的衣服：长按删除，短按修改
+  </view>
   <view
     class="list-item"
     wx:for="{{list}}"
