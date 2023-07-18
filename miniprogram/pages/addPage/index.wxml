@@ -41,7 +41,7 @@
           <view>
             <radio value="{{item}}" checked="{{type === item}}"/>
           </view>
-          <view>{{item}}</view>
+          <view style="font-size: 28rpx;">{{item}}</view>
         </label>
       </radio-group>
     </view>
