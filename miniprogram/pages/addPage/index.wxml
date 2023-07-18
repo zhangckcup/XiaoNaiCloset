@@ -1,0 +1,56 @@
+<!--pages/addPage/index.wxml-->
+<view class="add-cloth-page">
+  <mp-toptips 
+    msg="{{error}}" 
+    type="error" 
+    show="{{error}}" 
+    delay="{{3000}}"
+  />
+  <view class="add-cloth-title">记录新衣服</view>
+  <form>
+    <view class="weui-cells__title">衣服展示图</view>
+    <view class="weui-cell">
+      <mp-uploader
+        ext-class="add-cloth-uploader"
+        title=""
+        tips="图片长宽比为16:9哦"
+        delete="{{true}}"
+        upload="imgUpload"
+        bindselect="imgSelect"
+        bindfail="imgUploadFail"
+        bindsuccess="imgUploadFail"
+        files="{{imgList}}"
+      />
+    </view>
+    <view class="weui-cells__title">衣服名称</view>
+    <view class="weui-cell">
+      <input
+        class="weui-input"
+        maxlength="18"
+        bindinput="bindClothName"
+        placeholder="请输入衣服名称"
+      />
+    </view>
+    <view class="weui-cells__title">衣服类型</view>
+    <view class="weui-cell">
+      <radio-group 
+        class="cloth-type-radio" 
+        bindchange="radioChange"
+      >
+        <label class="weui-check__label" wx:for="{{clothType}}" wx:key="item">
+          <view>
+            <radio value="{{item}}" checked="{{type === item}}"/>
+          </view>
+          <view>{{item}}</view>
+        </label>
+      </radio-group>
+    </view>
+    <button 
+      style="margin: 120rpx auto" 
+      type="primary" 
+      formType="submit"
+      bindtap="bindSubmit"
+      disabled="{{disabled}}"
+    >记 录</button>
+  </form>
+</view>

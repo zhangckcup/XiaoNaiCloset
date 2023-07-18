@@ -5,12 +5,7 @@ const app = getApp<IAppOption>()
 Page({
   data: {
     tabs: ['全部', '洛丽塔', 'C服', 'JK', '汉服', '其他'],
-    activeTab: 0,
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    userInfo: {}
   },
   // 生命周期
   onLoad() {
@@ -21,10 +16,15 @@ Page({
       })
     }
   },
-  onTabClick() {
-
-  },
-  onChange() {
-
+  onAddTap() {
+    wx.navigateTo({
+      url: "/pages/addPage/index",
+      success(res) {
+        console.log("pages/addPage/index ok", res);
+      },
+      fail(err) {
+        console.log("pages/addPage/index error",err);
+      }
+    });
   }
 })
